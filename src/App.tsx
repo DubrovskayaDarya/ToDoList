@@ -7,7 +7,7 @@ import {AppBar, Button, Container, Grid, IconButton, Paper, Toolbar, Typography}
 import {Menu} from "@material-ui/icons";
 
 export type FilterValuesType = "all" | "active" | "completed";
-type ToDoListsType = {
+export type ToDoListsType = {
     id: string,
     title: string,
     filter: FilterValuesType
@@ -49,7 +49,7 @@ function App() {
         setTasks({...tasks});
     }
 
-    function changeFilter(value: FilterValuesType, id: string) {
+    function changeToDoListFilter(value: FilterValuesType, id: string) {
         let toDoList = toDoLists.find(t => t.id === id);
         if (toDoList) {
             toDoList.filter = value;
@@ -134,7 +134,7 @@ function App() {
                                         filter={t.filter}
 
                                         removeTask={removeTask}
-                                        changeFilter={changeFilter}
+                                        changeFilter={changeToDoListFilter}
                                         addTask={addTask}
                                         removeToDoList={removeToDoList}
                                         setNewTitle={setNewTitle}
