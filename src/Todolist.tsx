@@ -58,7 +58,7 @@ export function Todolist(props: PropsType) {
                 {props.tasks.map(t => {
                     const onClickHandler = () => props.removeTask(t.id, props.toDoListId)
                     const setStatus = (isDone: boolean) => {
-                        props.changeStatus(t.id, isDone, props.toDoListId)
+                        props.changeStatus(t.id, !isDone, props.toDoListId)
                     }
                     const setNewTitle = (newTitle: string) => {
                         props.setNewTitle(t.id, newTitle, props.toDoListId)
